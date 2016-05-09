@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import project.Graph;
+import dataStructures.Graph;
 
 /**
  * Reads all the inputs and produces the output
