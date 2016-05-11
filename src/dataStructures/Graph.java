@@ -1,27 +1,44 @@
 package dataStructures;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Graph {
 
-	private List<Edge> [] graph;
+	//Array with all edges of the graph
+	private Edge [] edges;
 
-	@SuppressWarnings("unchecked")
-	public Graph(int nNodes) {
-		graph = (List<Edge>[]) new List[nNodes-1];
+	//NUmber of nodes
+	private int nNodes;
+
+	private int count;
+
+	public Graph(int nNodes, int nEdges) {
+		edges=new Edge [nEdges];
+		this.nNodes=nNodes;
+		count=0;
 	}
 
-	public void addEdge(int startNode, int finalNode, int cost) {
-		if(graph[startNode]==null)
-			graph[startNode] = new ArrayList<Edge>();
-		
-		List<Edge> l = graph [startNode];
-		
-		l.add(new Edge (startNode, finalNode, cost));
+	/**
+	 * Adds an edge to the graph
+	 * @param startNode First Node
+	 * @param finalNode Last Node
+	 * @param cost Cost of the path
+	 */
+	public void addEdge (int startNode, int finalNode, int cost) {
+		edges[count++]=new Edge(startNode, finalNode, cost);
 	}
-	
-	public int getGrpahSize () {
-		return graph.length+1;
+
+	/**
+	 *Returns the number of nodes in the graph
+	 * @return Number of nodes in the graph
+	 */
+	public int getGraphSize () {
+		return nNodes;
+	}
+
+	/**
+	 * Returns an array containing all the edges of the graph
+	 * @return An array containing all the edges of the graph
+	 */
+	public Edge [] getEdges () {
+		return edges;	
 	}
 }

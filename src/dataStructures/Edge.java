@@ -1,30 +1,27 @@
 package dataStructures;
 
 public class Edge {
-	
-	private final int startNode;
-	private final int finalNode;
+
+	private final int start;
+	private final int end;
 	private final int cost;
 	
-	public Edge (int startNode, int finalNode, int cost) {
-		this.startNode=startNode;
-		this.finalNode=finalNode;
+	public Edge (int start, int end, int cost) {
+		this.start=start;
+		this.end=end;
 		this.cost=cost;
 	}
 
-	public int getStartNode() {
-		return startNode;
+	public int getStart() {
+		return start;
 	}
 
-	public int getFinalNode() {
-		return finalNode;
+	public int getEnd() {
+		return end;
 	}
 
 	public int getCost() {
 		return cost;
 	}
 	
-	public boolean isGold() {
-		return cost>0;
-	}
 }
